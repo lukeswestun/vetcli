@@ -105,6 +105,6 @@ MIT — core is open source. Pro and Team features are commercial.
 
 ## Links
 
-- GitHub: [github.com/vet-cli/vet](https://github.com/vet-cli/vet)
-- npm: [npmjs.com/package/vet](https://npmjs.com/package/vet)
-- Website: [vet.dev](https://vet.dev)
+- GitHub: [github.com/lukeswestun/vetcli](https://github.com/lukeswestun/vetcli)
+- npm: [npmjs.com/package/vetcli](https://npmjs.com/package/vetcli)
+- Website: [vetcli.dev](https://vetcli.dev)
