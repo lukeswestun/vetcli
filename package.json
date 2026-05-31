@@ -1,8 +1,15 @@
 {
   "name": "vet-it",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "AI Output Verification — pre-commit verification for AI-generated code",
-  "keywords": ["ai", "verification", "pre-commit", "hallucination", "security", "cli"],
+  "keywords": [
+    "ai",
+    "verification",
+    "pre-commit",
+    "hallucination",
+    "security",
+    "cli"
+  ],
   "homepage": "https://vetcli.dev",
   "repository": {
     "type": "git",
