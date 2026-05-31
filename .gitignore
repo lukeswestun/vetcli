@@ -4,3 +4,4 @@ coverage/
 .vetcli/
 *.tsbuildinfo
 .env
+.DS_Store
