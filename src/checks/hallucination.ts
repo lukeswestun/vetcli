@@ -157,16 +157,14 @@ export function checkHallucination(
       }
 
       if (!KNOWN_NPM_PACKAGES.has(packageName) && !isScopedPackage(packageName)) {
-        if (isSuspiciousPackageName(packageName)) {
-          issues.push({
-            file: file.file,
-            line: imp.line,
-            category: 'hallucination',
-            severity: 'error',
-            message: `Package '${packageName}' not found in known npm packages and has a suspicious name`,
-            suggestion: `AI may have hallucinated this package. Verify it exists before importing.`,
-          })
-        }
+        issues.push({
+          file: file.file,
+          line: imp.line,
+          category: 'hallucination',
+          severity: isSuspiciousPackageName(packageName) ? 'error' : 'warning',
+          message: `Package '${packageName}' not found in known npm packages`,
+          suggestion: `AI may have hallucinated this package. Verify it exists on npm before using.`,
+        })
       }
     }
 

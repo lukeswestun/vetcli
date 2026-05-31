@@ -32,6 +32,13 @@ const SECURITY_PATTERNS: SecurityPattern[] = [
     label: 'HARDCODED_API_KEY',
   },
   {
+    pattern: /\bkey\s*=\s*['"`][^'"`\s]{8,}['"`]/i,
+    message: 'Hardcoded API key detected',
+    suggestion: 'Use environment variable instead of literal string',
+    severity: 'error',
+    label: 'HARDCODED_API_KEY',
+  },
+  {
     pattern: /\b(?:secret|token|auth)\s*[=:]\s*['"`][^'"`\s]{8,}['"`]/i,
     message: 'Possible secret or token hardcoded',
     suggestion: 'Use environment variable or secret manager',
@@ -128,6 +135,13 @@ const SECURITY_PATTERNS: SecurityPattern[] = [
     suggestion: 'Set secure=true for cookies in production',
     severity: 'warning',
     label: 'COOKIE_SECURE_OFF',
+  },
+  {
+    pattern: /['"`]sk-(?:live|test|prod)_[A-Za-z0-9]{10,}['"`]/,
+    message: 'Secret key (e.g. Stripe/OpenAI) detected in code',
+    suggestion: 'Use environment variable instead of hardcoding secret keys',
+    severity: 'error',
+    label: 'SECRET_KEY_IN_CODE',
   },
   {
     pattern: /\b(?:ssh|rsa|ecdsa|ed25519)\s*-----BEGIN/i,
