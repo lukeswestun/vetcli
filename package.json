@@ -1,0 +1,46 @@
+{
+  "name": "vet",
+  "version": "0.1.0",
+  "description": "AI Output Verification — pre-commit verification for AI-generated code",
+  "keywords": ["ai", "verification", "pre-commit", "hallucination", "security", "cli"],
+  "homepage": "https://vet.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vet-cli/vet"
+  },
+  "license": "MIT",
+  "author": "Vet (vet.dev)",
+  "type": "module",
+  "bin": {
+    "vet": "./dist/cli/index.js"
+  },
+  "files": [
+    "dist",
+    "src/checks/data"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm test",
+    "precommit": "node dist/cli/index.js"
+  },
+  "dependencies": {
+    "commander": "^12.0.0",
+    "diff": "^5.2.0",
+    "fast-glob": "^3.3.0",
+    "minimatch": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/diff": "^5.2.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
