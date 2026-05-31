@@ -1,6 +1,6 @@
 {
   "name": "vet-it",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "AI Output Verification — pre-commit verification for AI-generated code",
   "keywords": [
     "ai",
