@@ -5,9 +5,9 @@
 Vet is a CLI tool that tests AI-generated code for correctness, security, and style before committing. Runs locally in milliseconds. Privacy-first — zero network calls.
 
 ```
-npx vet init    # Set up pre-commit hook
+npx vet-it init    # Set up pre-commit hook
 git add .       # Stage your changes
-git commit      # Vet runs automatically
+git commit      # VetCLI runs automatically
 ```
 
 ## Features
@@ -22,35 +22,35 @@ git commit      # Vet runs automatically
 
 ```bash
 # Install globally
-npm install -g vet
+npm install -g vet-it
 
 # Or run without installing
-npx vet init
+npx vet-it init
 
 # Verify staged changes
-vet
+vetcli
 
 # Check a specific file
-vet check src/parser.ts
+vetcli check src/parser.ts
 
 # View configuration
-vet config
+vetcli config
 ```
 
 ## How It Works
 
-1. Install Vet in your project
+1. Install VetCLI in your project
 2. Code with your AI tool (Cursor, Copilot, Claude Code)
 3. `git add . && git commit`
-4. Vet checks every changed file for AI failure modes
+4. VetCLI checks every changed file for AI failure modes
 5. Fix issues before they land in your repo
 
 ## Example Output
 
 ```
-❯ vet
+❯ vetcli
 
-  ❯ Vet — AI Output Verification
+  ❯ VetCLI — AI Output Verification
 
   Files checked: 3
   Issues found: 2
@@ -106,5 +106,5 @@ MIT — core is open source. Pro and Team features are commercial.
 ## Links
 
 - GitHub: [github.com/lukeswestun/vetcli](https://github.com/lukeswestun/vetcli)
-- npm: [npmjs.com/package/vetcli](https://npmjs.com/package/vetcli)
+- npm: [npmjs.com/package/vet-it](https://npmjs.com/package/vet-it)
 - Website: [vetcli.dev](https://vetcli.dev)

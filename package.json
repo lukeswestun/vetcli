@@ -1,12 +1,12 @@
 {
-  "name": "vetcli",
+  "name": "vet-it",
   "version": "0.1.0",
   "description": "AI Output Verification — pre-commit verification for AI-generated code",
   "keywords": ["ai", "verification", "pre-commit", "hallucination", "security", "cli"],
   "homepage": "https://vetcli.dev",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vetcli/vetcli"
+    "url": "https://github.com/lukeswestun/vetcli"
   },
   "license": "MIT",
   "author": "VetCLI (vetcli.dev)",
