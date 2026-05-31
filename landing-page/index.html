@@ -187,15 +187,19 @@
       padding: 10px 14px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      position: relative;
       border-bottom: 1px solid #2A2A2A;
+    }
+
+    .terminal-dots {
+      display: flex;
+      gap: 8px;
     }
 
     .terminal-dot {
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      flex-shrink: 0;
     }
 
     .terminal-dot.red { background: #FF5F56; }
@@ -203,12 +207,14 @@
     .terminal-dot.green { background: #27C93F; }
 
     .terminal-title {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
       color: var(--text-dim);
       font-family: 'Inter', sans-serif;
       font-size: 12px;
       font-weight: 500;
-      margin-left: auto;
-      margin-right: auto;
+      white-space: nowrap;
     }
 
     .terminal-body {
@@ -665,9 +671,11 @@
       <div class="terminal-wrapper">
         <div class="terminal-window">
           <div class="terminal-titlebar">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
+            <div class="terminal-dots">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+            </div>
             <span class="terminal-title">vetcli</span>
           </div>
           <div class="terminal-body">
@@ -696,7 +704,7 @@
     <section id="features" class="features">
       <div class="section-header">
         <h2>What VetCLI checks</h2>
-        <p>Every AI-generated commit gets scanned for the most common failure modes</p>
+        <p>Every AI-generated commit gets scanned for the most common failure modes.</p>
       </div>
       <div class="feature-grid">
         <div class="feature-card">
@@ -729,7 +737,7 @@
     <section id="pricing" class="pricing">
       <div class="section-header">
         <h2>Simple pricing</h2>
-        <p>Start free, upgrade when you need CI or team features</p>
+        <p>Start free, upgrade when you need CI or team features.</p>
       </div>
       <div class="pricing-grid">
         <div class="pricing-card">
