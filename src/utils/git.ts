@@ -26,7 +26,6 @@ function getStagedDiff(cwd: string): string {
 function parseDiff(raw: string): GitFileDiff[] {
   const files: GitFileDiff[] = []
   const fileRegex = /^\+\+\+\s+(?:b\/)?(.+)$/m
-  const hunkRegex = /^@@ -\d+(?:,\d+)? \+(\d+)(?:,\d+)? @@.*$/m
 
   const sections = raw.split(/^diff --git /m).slice(1)
 
@@ -36,7 +35,6 @@ function parseDiff(raw: string): GitFileDiff[] {
 
     const file = fileMatch[1]
     const lines: { line: number; content: string }[] = []
-    const hunkMatches = section.matchAll(hunkRegex)
 
     const sectionLines = section.split('\n')
     let currentLineOffset = 0
@@ -107,7 +105,7 @@ export function getGitHistoryPatterns(
   try {
     const log = execSync(
       'git log --diff-filter=A --name-only --format="" -100',
-      { cwd, encoding: 'utf-8', maxBuffer: 5 * 1024 * 1024 },
+      { cwd, encoding: 'utf-8', maxBuffer: 5 * 1024 * 1024, stdio: ['pipe', 'pipe', 'pipe'] },
     )
 
     const files = log.split('\n').filter(Boolean)

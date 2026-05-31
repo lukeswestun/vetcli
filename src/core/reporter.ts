@@ -1,7 +1,7 @@
 import type { VerificationResult } from './index.js'
 import { green, red, yellow, blue, bold, dim, success, error as errMsg, warning, info } from '../utils/logging.js'
 
-export function formatTextReport(result: VerificationResult, name = 'Vet'): string {
+export function formatTextReport(result: VerificationResult, name = 'VetCLI'): string {
   const lines: string[] = []
 
   lines.push('')

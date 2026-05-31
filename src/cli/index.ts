@@ -25,7 +25,7 @@ function getVersion(): string {
 const program = new Command()
 
 program
-  .name('vet')
+  .name('vetcli')
   .description('AI Output Verification — pre-commit verification for AI-generated code')
   .version(getVersion())
 
@@ -47,19 +47,29 @@ program
     initCommand()
   })
 
-program
+const configCmd = program
   .command('config')
   .description('View or modify configuration')
-  .argument('[key]', 'Config key to get')
-  .argument('[value]', 'Value to set')
-  .action((key?: string, value?: string) => {
-    if (key && value) {
-      configSetCommand(key, value)
-    } else if (key) {
+
+configCmd
+  .command('get', { isDefault: true })
+  .description('Get a config value')
+  .argument('[key]', 'Config key (e.g., checks.hallucination)')
+  .action((key?: string) => {
+    if (key) {
       configGetCommand(key)
     } else {
       configCommand()
     }
+  })
+
+configCmd
+  .command('set')
+  .description('Set a config value')
+  .argument('<key>', 'Config key (e.g., checks.hallucination)')
+  .argument('<value>', 'Config value')
+  .action((key: string, value: string) => {
+    configSetCommand(key, value)
   })
 
 program

@@ -4,7 +4,7 @@ import { defaultConfig, type VetConfig } from '../../config/defaults.js'
 import { configToString } from '../../config/loader.js'
 
 export function configGetCommand(key?: string) {
-  const configPath = join(process.cwd(), '.vet', 'config.json')
+  const configPath = join(process.cwd(), '.vetcli', 'config.json')
   let config: VetConfig
 
   if (existsSync(configPath)) {
@@ -32,7 +32,7 @@ export function configGetCommand(key?: string) {
 }
 
 export function configSetCommand(key: string, value: string) {
-  const configPath = join(process.cwd(), '.vet', 'config.json')
+  const configPath = join(process.cwd(), '.vetcli', 'config.json')
   let config: VetConfig
 
   if (existsSync(configPath)) {

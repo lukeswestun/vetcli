@@ -14,7 +14,7 @@ function mergeConfig(base: VetConfig, user: Partial<VetConfig>): VetConfig {
 }
 
 export function loadConfig(cwd: string = process.cwd()): VetConfig {
-  const configPath = join(cwd, '.vet', 'config.json')
+  const configPath = join(cwd, '.vetcli', 'config.json')
 
   if (!existsSync(configPath)) {
     return { ...defaultConfig }

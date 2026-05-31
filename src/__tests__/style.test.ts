@@ -13,7 +13,7 @@ describe('checkStyle', () => {
     }]
 
     const result = checkStyle(files, defaultConfig)
-    const classIssue = result[0].issues.find(i => i.message.includes('Class'))
+    const classIssue = result[0].issues.find(i => i.message.includes('myComponent'))
     expect(classIssue).toBeDefined()
     expect(classIssue?.category).toBe('style')
   })
